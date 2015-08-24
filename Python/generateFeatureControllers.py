@@ -508,6 +508,16 @@ def generateFeatureControllers (allFeatures, SRC_DIR, INC_DIR):
     cFile.write ('*/\n')
     cFile.write ('\n')
 
+    cFile.write ('#ifdef WIN32\n')
+    cFile.write ('\n')
+    cFile.write ('#include <stdint.h>\n')
+    cFile.write ('\n')
+    cFile.write ('typedef uint8_t u_int8_t;\n')
+    cFile.write ('typedef uint16_t u_int16_t;\n')
+    cFile.write ('typedef uint32_t u_int32_t;\n')
+    cFile.write ('\n')
+    cFile.write ('#endif\n')
+
     cFile.write ('#include <stdio.h>\n')
 
     cFile.write ('#include <libARSAL/ARSAL_Mutex.h>\n')
